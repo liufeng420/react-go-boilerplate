@@ -1,17 +1,17 @@
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { string } from 'prop-types';
 
-const Randim = ({ search }) => (
+interface propTypes {
+  search: string
+};
+
+const Randim = (props: propTypes) => (
   <div>
     <h1> this is a Randim </h1>
-    <p> {search} </p>
+    <p> {props.search} </p>
   </div>
 );
-
-Randim.propTypes = {
-  search : string.isRequired
-};
 
 const mapStateToProps = ({ routing }) => ({
   search : routing.location.search

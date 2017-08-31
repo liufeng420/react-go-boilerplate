@@ -1,9 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { func } from 'prop-types';
 import { createSomething } from '../actions/test-actions';
 
-const Post = ({ createSomething }) => {
+interface propTypes {
+  createSomething: (params: object) => void
+}
+
+const Post = (props: propTypes) => {
   let value;
 
   return (
@@ -12,16 +16,12 @@ const Post = ({ createSomething }) => {
       <input placeholder = 'value' ref = {node => value = node} />
 
       <button onClick = {() => {
-        createSomething({ key: value.value });
+        props.createSomething({ key: value.value });
       }}>
         post!
       </button>
     </div>
   );
-};
-
-Post.propTypes = {
-  createSomething : func.isRequired
 };
 
 const mapDispatchToProps = { createSomething };

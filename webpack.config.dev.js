@@ -11,11 +11,12 @@ module.exports = {
   },
 
   resolve : {
-    extensions : ['.jsx', '.scss', '.js', '.json']
+    extensions : ['.ts', '.tsx', '.jsx', '.scss', '.js', '.json']
   },
 
   module : {
     loaders : [
+      { test: /\.(ts|tsx)$/, exclude: /node_modules/, loaders: ['react-hot-loader', 'babel-loader', 'awesome-typescript-loader'] },
       { test: /\.(js|jsx)$/, exclude: /node_modules/, loaders: ['react-hot-loader', 'babel-loader'] },
       { test: /\.css$/, loaders: ['style-loader', 'css-loader'] },
       { test: /\.less$/, loaders: ['style-loader', 'css-loader', 'less-loader'] },
