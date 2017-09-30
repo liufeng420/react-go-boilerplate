@@ -1,9 +1,10 @@
 .DS_Store
 main
 gin-bin
+bundle.js
+bundle.css
 node_modules/
 server/public/components
-server/public/bundle.js
 server/db/bug-bash-tool
 .sass-cache
 log/
